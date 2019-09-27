@@ -32,7 +32,7 @@ public class CourseConsumerService {
         .exchange("http://localhost:8081/spring-course/api/v1.0/courses", HttpMethod.GET
         ,null,new ParameterizedTypeReference<String> () {},"").getBody();
     
-    System.out.println("Response Received from Curso Application");
+    System.out.println("Response Received from Course Application");
     return "NORMAL CALL Successful" + "Course Details: " + response;
   }
 
