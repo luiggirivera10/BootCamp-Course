@@ -92,7 +92,7 @@ public class CourseRestController {
   @PostMapping("/courses")
   public Mono<ResponseEntity<Course>> newCourse(@Valid @RequestBody final Course course) {
     return service.save(course)
-              .map(addCourse-> new ResponseEntity<>(addCourse, HttpStatus.CREATED))
+              .map(addCourse -> new ResponseEntity<>(addCourse, HttpStatus.CREATED))
               .defaultIfEmpty(new ResponseEntity<>(HttpStatus.CONFLICT));
   }
 
