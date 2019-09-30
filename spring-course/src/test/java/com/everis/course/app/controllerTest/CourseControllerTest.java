@@ -51,9 +51,9 @@ public class CourseControllerTest {
     Flux<Course> initData = courseRepository.deleteAll()
         .thenMany(Flux.just(
         Course.builder().id("1").name("Robotica").state("Abierto").duration("24Hrs").capmax("25")
-        .capmin("12").teacherID("10000001").listenerID("10000002").studentID("10000003").build(),
-        Course.builder().id("2").name("Fisica").state("Abierto").duration("26Hrs").capmax("28")
-        .capmin("15").teacherID("20000001").listenerID("20000002").studentID("20000003").build())
+        .capmin("12").teacherID("10000001").listenerID("10000002").build(),
+        Course.builder().id("2").name("Fisica").state("Abierto").capmax("28")
+        .capmin("15").teacherID("20000001").listenerID("20000002").build())
         .flatMap(courseRepository::save))
         .thenMany(courseRepository.findAll());
 

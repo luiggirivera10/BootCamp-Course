@@ -67,6 +67,16 @@ public class CourseRestController {
 
   /**
 
+   * Servicio buscar por ID.
+
+   */
+  @GetMapping("/courses/teacher/{teacherID}")
+ public Flux<Course> findByTeacherID(@PathVariable final String teacherID) {
+    return service.findByTeacherID(teacherID).doOnNext(teach -> LOG.info(teach.getTeacherID()));
+  }
+
+  /**
+
    * Servicio para buscar por nombre devuelve una lista.
 
    */
@@ -112,7 +122,6 @@ public class CourseRestController {
                   existingCourse.setCapmin(course.getCapmin());
                   existingCourse.setDuration(course.getDuration());
                   existingCourse.setTeacherID(course.getTeacherID());
-                  existingCourse.setStudentID(course.getStudentID());
                   existingCourse.setListenerID(course.getListenerID());
                   existingCourse.setModifiedAt(course.getModifiedAt());
                   return service.save(existingCourse);

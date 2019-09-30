@@ -52,7 +52,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");
     when(courseService.findAll()).thenReturn(Flux.just(course));
     final Flux<Course> actua = courseService.findAll();
@@ -72,7 +71,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");
     when(courseRepository.findById(course.getId())).thenReturn(Mono.just(course));
     final Mono<Course> actual = courseRepository.findById(course.getId());
@@ -92,7 +90,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");
     when(courseRepository.findById(course.getId())).thenReturn(Mono.empty());
     final Mono<Course> actual = courseRepository.findById(course.getId());
@@ -112,7 +109,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");
     when(courseRepository.save(course)).thenReturn(Mono.just(course));
     final Mono<Course> actual = courseService.save(course);
@@ -132,7 +128,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");    
     when(courseRepository.delete(course)).thenReturn(Mono.empty());
   }
@@ -150,7 +145,6 @@ public class CourseServiceImplTestService {
     course.setCapmin("12");
     course.setDuration("24Hrs");
     course.setTeacherID("12312311");
-    course.setStudentID("12312312");
     course.setListenerID("12312313");
     final String name = "dekweowe";
     when(courseRepository.findByName(name)).thenReturn(Flux.just(course));

@@ -39,4 +39,9 @@ public interface CourseService {
  * Solo para TEST.
  */
   Mono<Course> obtenerPorName(String name);
+
+  /**
+ * Metodo FindById.
+ */
+  Flux<Course> findByTeacherID(String teacherID);
 }

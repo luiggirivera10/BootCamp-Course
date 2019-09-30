@@ -18,4 +18,10 @@ public interface CourseRepository extends ReactiveMongoRepository<Course, String
  */
   @Query("{ 'name': ?0 }")
   Mono<Course> findName(String name);
+
+  /**
+ * findByTeacherID.
+ */
+  Flux<Course> findByTeacherID(String teacherID);
 }
+

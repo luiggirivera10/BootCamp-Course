@@ -65,15 +65,11 @@ public class Course {
   /**
    * .
    */
-  @NotEmpty(message = "'studentID' No debe ser vacio!")
-  @Size(min = 8, max = 8,message = "'studentID' debe tener 8 caracteres")
- private String studentID;
-  /**
-   * .
-   */
   @NotEmpty(message = "'listenerID' No debe ser vacio!")
   @Size(min = 8, max = 8,message = "'listenerID' debe tener 8 caracteres")
  private String listenerID;
+ 
+
   /**
    * .
    */
@@ -85,5 +81,5 @@ public class Course {
    */
   @NotNull
   @JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
- private Date modifiedAt = new Date();
+ private Date modifiedAt = new Date();  
 }

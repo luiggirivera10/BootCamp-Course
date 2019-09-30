@@ -65,4 +65,9 @@ public class CourseServiceImpl implements CourseService {
     return courseRepository.findName(name);
   }
 
+  @Override
+  public Flux<Course> findByTeacherID(String teacherID) {
+    return courseRepository.findByTeacherID(teacherID);
+  }
+
 }
